@@ -1,5 +1,4 @@
 requests
-dnspython
-pyOpenSSL
 beautifulsoup4
-tqdm
+colorama
+censys

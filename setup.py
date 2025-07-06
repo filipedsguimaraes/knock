@@ -1,28 +1,37 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from setuptools import setup
 import os
 
-wordlist = 'wordlist' + os.sep + 'wordlist.txt'
+# local wordlist
+local = "local{sep}*.txt".format(sep=os.sep)
+# remote wordlist
+remote = "remote{sep}*.py".format(sep=os.sep)
+# lib
+lib = "lib{sep}*.py".format(sep=os.sep)
 
 setup(
-    name='knock-subdomains',
-    version='7.0.2',
-    description='Knockpy Subdomains Scan',
-    url='https://github.com/guelfoweb/knock',
-    author='Gianni Amato',
-    author_email='guelfoweb@gmail.com',
-    license='GPL-3.0',
-    packages=['knock'],
-    package_data={"knock": [wordlist, 'report'],},
-    include_package_data=True,
-    install_requires=[
-        'requests>=2.31.0', 
-        'dnspython>=2.4.2', 
-        'pyOpenSSL>=23.3.0', 
-        'beautifulsoup4>=4.12.3', 
-        'tqdm>=4.66.2'],
-    entry_points={
-        'console_scripts': [
-            'knockpy=knock.knockpy:main',
-        ],
-    }
+	name="knockpy",
+	version="6.1.0",
+	description="Knock is a Knockpy is a portable and modular python3 tool designed to quickly enumerate subdomains on a target domain through passive reconnaissance and dictionary attack.",
+	url="https://github.com/guelfoweb/knock",
+	author="Gianni 'guelfoweb' Amato",
+	license="GPL-3.0",
+	packages=["knockpy"],
+	package_data={
+		"knockpy": [lib, local, remote],
+	},
+	include_package_data=True,
+	install_requires = [
+			"requests",
+			"beautifulsoup4",
+			"colorama",
+			],
+	python_requires=">=3.6",
+	entry_points={
+		'console_scripts': [
+			'knockpy=knockpy.knockpy:main2',
+		],
+	}
 )

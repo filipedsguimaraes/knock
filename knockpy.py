@@ -4,10 +4,10 @@
 import os
 import sys
 
-from knock import knockpy
+from knockpy import knockpy
 
 def main():
-    knockpy.main()
+    knockpy.main2()
 
 
 if __name__ == "__main__":
