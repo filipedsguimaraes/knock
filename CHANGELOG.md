@@ -1,5 +1,9 @@
 # Changelog
 
+**Recursive - 2025-07-06**
+---------
+- added recursive scan --recursive
+  
 6.1.0 - 2023-01-18
 ---------
 - added plugin test --plugin-test
